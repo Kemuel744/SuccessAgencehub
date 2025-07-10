@@ -380,12 +380,12 @@
                         <div class="burger" id="burger">
                             <i class="fa-solid fa-bars"></i>
                         </div>
-                    <ul id="menu">
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="services.html">Nos Services</a></li>
-                        <li><a href="boutique.html">Boutique</a></li>
-                        <li><a href="propos.html">À Propos</a></li>
-                    </ul>
+                        <ul id="menu">
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="services.html">Nos Services</a></li>
+                            <li><a href="boutique.html">Boutique</a></li>
+                            <li><a href="propos.html">À Propos</a></li>
+                        </ul>
                     </nav>
 
                     <!-- la section recherche -->
@@ -551,11 +551,11 @@
                 </section>
                 <section class="foot2">
                     <h4>Suivez-moi</h4>
-                <div class="icone">
-                    <a href="https://www.facebook.com/share/1FD2WbLHPR/"> <i class="fa-brands fa-facebook"></i> </a>
-                    <a href="https://chat.whatsapp.com/Ed3wyyYKl2p7QXFJ17C8GS?mode=ac_c"> <i class="fa-brands fa-whatsapp"></i> </a>
-                    <a href="https://www.instagram.com/successagence12/"><i class="fa-brands fa-instagram"></i> </a>
-                </div>
+                    <div class="icone">
+                        <a href="#"> <i class="fa-brands fa-facebook"></i> </a>
+                        <a href="#"> <i class="fa-brands fa-whatsapp"></i> </a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i> </a>
+                    </div>
                 </section>
             </section>
             <section class="foot3">
@@ -563,15 +563,25 @@
             </section>
         </footer>
 
-        <script>
-            const burger = document.getElementById('burger');
-            const menu = document.getElementById('menu');
-
-            burger.addEventListener('click', () => {
-                menu.classList.toggle('active');
-            });
-        </script>
     </section>
+    
+    <script>
+        const burger = document.getElementById('burger');
+        const menu = document.getElementById('menu');
+        const links = menu.querySelectorAll('a');
+
+        // Ouvre ou ferme le menu en cliquant sur le bouton burger
+        burger.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+
+        // Ferme le menu quand on clique sur un lien du menu
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
